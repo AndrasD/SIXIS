@@ -1,0 +1,12 @@
+﻿@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@if (!User.IsSignedIn())
+{
+    @Html.Partial("../Account/Login")
+}
+
