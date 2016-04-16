@@ -1,0 +1,79 @@
+@model TKE.Models.Dolgozo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Dolgozo</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Azonosito" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Azonosito" class="form-control" />
+                <span asp-validation-for="Azonosito" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DolgozoNev" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DolgozoNev" class="form-control" />
+                <span asp-validation-for="DolgozoNev" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Jelszo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Jelszo" class="form-control" />
+                <span asp-validation-for="Jelszo" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="KmSzorzo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="KmSzorzo" class="form-control" />
+                <span asp-validation-for="KmSzorzo" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="OraHK" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="OraHK" class="form-control" />
+                <span asp-validation-for="OraHK" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="OraHV" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="OraHV" class="form-control" />
+                <span asp-validation-for="OraHV" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Szint" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Szint" class="form-control" />
+                <span asp-validation-for="Szint" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -2,13 +2,14 @@
 @using Microsoft.AspNet.Http
 @using Microsoft.AspNet.Http.Authentication
 @model LoginViewModel
+
 @inject SignInManager<ApplicationUser> SignInManager
 
 @{
     ViewData["Title"] = "Kijelentkezés";
 }
 
-<h3>@ViewData["Title"]</h3>
+<h2>@ViewData["Title"]</h2>
 <hr />
 <div class="container">
     <div class="row">
@@ -18,7 +19,7 @@
             <form asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="form-horizontal" role="form">
                 <fieldset>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-block btn-primary">Kilépés</button>
+                        <button type="submit" class="btn btn-block btn-primary">Kilépés <i class="glyphicon glyphicon-log-out"></i></button>
                     </div>
                 </fieldset>
             </form>

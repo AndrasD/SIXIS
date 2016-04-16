@@ -2,22 +2,33 @@
 
 @if (User.IsSignedIn())
 {
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-user"></span> @User.GetUserName() <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a asp-controller="Manage" asp-action="Index"><span class="glyphicon glyphicon-user"></span> Profilom</a></li>
-                    <li><a asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-out"></span> Kilépés</a></li>
-                </ul>
-            </li>
-        </ul>
+    <ul class="nav navbar-nav">
+        <li><a asp-controller="TuloraKilometer" asp-action="Index">Túlóra/Kilóméter</a></li>
+        <li><a asp-controller="Dolgozo" asp-action="Index">Dolgozók</a></li>
+        <li><a asp-controller="Parameter" asp-action="Index">Paraméterek</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span> @User.GetUserName() <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a asp-controller="Manage" asp-action="Index"><span class="glyphicon glyphicon-cog"></span> Profil szerkesztés</a></li>
+                <li><a asp-controller="Account" asp-action="Logout"><span class="glyphicon glyphicon-log-out"></span> Kilépés</a></li>
+            </ul>
+        </li>
+    </ul>
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li><a asp-controller="Account" asp-action="Register">Regisztráció</a></li>
-        <li><a asp-controller="Home" asp-action="Index">Bejelentkezés</a></li>
-    </ul>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a asp-controller="Home" asp-action="About">About</a></li>
+            <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a asp-controller="Account" asp-action="Register">Regisztráció</a></li>
+            <li><a asp-controller="Home" asp-action="Index">Bejelentkezés</a></li>
+        </ul>
+    </div>
 }

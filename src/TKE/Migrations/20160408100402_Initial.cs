@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Data.Entity.Migrations;
+using Microsoft.Data.Entity.Metadata;
 
 namespace TKE.Migrations
 {
@@ -13,6 +14,24 @@ namespace TKE.Migrations
             migrationBuilder.DropForeignKey(name: "FK_IdentityUserLogin<string>_ApplicationUser_UserId", table: "AspNetUserLogins");
             migrationBuilder.DropForeignKey(name: "FK_IdentityUserRole<string>_IdentityRole_RoleId", table: "AspNetUserRoles");
             migrationBuilder.DropForeignKey(name: "FK_IdentityUserRole<string>_ApplicationUser_UserId", table: "AspNetUserRoles");
+            migrationBuilder.CreateTable(
+                name: "Dolgozo",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Azonosito = table.Column<string>(nullable: false),
+                    Dolgozo_nev = table.Column<string>(nullable: false),
+                    Jelszo = table.Column<string>(nullable: false),
+                    Km_Szorzo = table.Column<int>(nullable: false),
+                    Ora_HK = table.Column<int>(nullable: false),
+                    Ora_HV = table.Column<int>(nullable: false),
+                    Szint = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Dolgozo", x => x.ID);
+                });
             migrationBuilder.AlterColumn<string>(
                 name: "UserId",
                 table: "AspNetUserLogins",
@@ -69,6 +88,7 @@ namespace TKE.Migrations
             migrationBuilder.DropForeignKey(name: "FK_IdentityUserLogin<string>_ApplicationUser_UserId", table: "AspNetUserLogins");
             migrationBuilder.DropForeignKey(name: "FK_IdentityUserRole<string>_IdentityRole_RoleId", table: "AspNetUserRoles");
             migrationBuilder.DropForeignKey(name: "FK_IdentityUserRole<string>_ApplicationUser_UserId", table: "AspNetUserRoles");
+            migrationBuilder.DropTable("Dolgozo");
             migrationBuilder.AlterColumn<string>(
                 name: "UserId",
                 table: "AspNetUserLogins",

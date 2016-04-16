@@ -146,6 +146,37 @@ namespace TKE.Migrations
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
                 });
 
+            modelBuilder.Entity("TKE.Models.Dolgozo", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Azonosito")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 45);
+
+                    b.Property<string>("Dolgozo_nev")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 45);
+
+                    b.Property<string>("Jelszo")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 45);
+
+                    b.Property<int>("Km_Szorzo");
+
+                    b.Property<int>("Ora_HK");
+
+                    b.Property<int>("Ora_HV");
+
+                    b.Property<string>("Szint")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 1);
+
+                    b.HasKey("ID");
+                });
+
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNet.Identity.EntityFramework.IdentityRole")
